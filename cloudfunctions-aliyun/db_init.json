@@ -6,40 +6,67 @@
 	"coupon": { // 集合（表名）
 		"data": [ // 数据
 			{
-				"name": "饿了么红包",
+				"bannerPic": "/static/coupon/ele_mrhb.jpeg",
 				"icon": "/static/coupon/ele.png",
-				"bannerPic": "/static/coupon/ele_banner.png",
-				"url": "https://s.click.ele.me/frZOjvu",
-				"type": 1,
-				"tabId": 1,
 				"minapp": {
 					"appid": "wxece3a9a4c82f58c9",
-					"path": "pages/sharePid/web/index?scene=https://s.click.ele.me/wR9ecuu"
-				}
-			},
-			{
-				"name": "美团外卖红包",
-				"icon": "/static/coupon/meituan.png",
-				"bannerPic": "/static/coupon/meituan_banner.png",
-				"url": "https://runion.meituan.com/url?key=cd23768d09c339d1641b2738df39aa67&url=https%3A%2F%2Fi.meituan.com%2Fawp%2Fhfe%2Fblock%2Fa945391288b790d558b7%2F78716%2Findex.html%3Fappkey%3Dcd23768d09c339d1641b2738df39aa67%3Ajuhe&sid=juhe",
+					"path": "taoke/pages/shopping-guide/index?scene=OBcfKtu"
+				},
+				"name": "每日外卖红包",
+				"tabId": 1,
 				"type": 1,
+				"url": "https://s.click.ele.me/OBcfKtu",
+				"intro": "介绍：每日最高20元无门槛红包"
+			},{
+				"_id": "5fc4bf8ffbd6de00010be377",
+				"bannerPic": "/static/coupon/ele_mj.jpeg",
+				"icon": "/static/coupon/ele.png",
+				"minapp": {
+					"appid": "wxece3a9a4c82f58c9",
+					"path": "pages/sharePid/web/index?scene=https://s.click.ele.me/INk7htu"
+				},
+				"name": "大额满减券",
+				"tabId": 1,
+				"type": 1,
+				"url": "https://s.click.ele.me/INk7htu",
+				"intro": "介绍：吃喝玩乐购，每日最高31元红包"
+			}, {
+				"bannerPic": "/static/coupon/ele_bybt.jpeg",
+				"icon": "/static/coupon/ele.png",
+				"minapp": {
+					"appid": "wxece3a9a4c82f58c9",
+					"path": "pages/sharePid/web/index?scene=https://s.click.ele.me/8av5htu"
+				},
+				"name": "百亿补贴",
+				"tabId": 1,
+				"type": 1,
+				"url": "https://s.click.ele.me/8av5htu",
+				"intro": "介绍：生鲜日用30分钟送到家 爆品低至1元，天天有红包"
+				
+			}, {
+				"bannerPic": "/static/coupon/ele_fruit_banner.png",
+				"icon": "/static/coupon/ele.png",
+				"minapp": {
+					"appid": "wxece3a9a4c82f58c9",
+					"path": "pages/sharePid/web/index?scene=https://s.click.ele.me/8av5htu"
+				},
+				"name": "蔬果生鲜超市",
+				"tabId": 1,
+				"type": 1,
+				"url": "https://s.click.ele.me/8av5htu",
+				"intro": "介绍：生鲜蔬果每日红包"
+				
+			},  {
+				"_id": "5fc4bf8ffbd6de00010be376",
+				"bannerPic": "/static/coupon/meituan_banner.png",
+				"icon": "/static/coupon/meituan.png",
+				"minapp": {
+					"appid": "wx2c348cf579062e56",
+					"path": "outer_packages/r2xinvite/coupon/coupon?inviteCode=NnOIp-QOs8SiYF1dcSlL5r8phPrCf6qkH7evMyjIoup2NXxNCLYcBbd3bqpv2X2IztI9wuZn13xnLXxvn8WLwvS9nd9A-rgRplYmnh8VHpdw2lsrKipLUX7Yd8kB_0ETeNnH_DULAj1PCPbSVKBeTytyPPsDMFNQRr-aXA6evvc"
+				},
+				"name": "美团外卖红包",
 				"tabId": 2,
-				"minapp": {
-					"appid": "wxde8ac0a21135c07d",
-					"path": "/index/pages/h5/h5?weburl=https%3A%2F%2Frunion.meituan.com%2Furl%3Fkey%3D591ec05930c57331c1212b936e6785c1%26url%3Dhttps%253A%252F%252Fi.meituan.com%252Fawp%252Fhfe%252Fblock%252Fa13b87919a9ace9cfab4%252F89400%252Findex.html%253Fappkey%253D591ec05930c57331c1212b936e6785c1%253A000001%26sid%3D000001&lch=cps:waimai:5:591ec05930c57331c1212b936e6785c1:000001&f_token=1&f_userId=1"
-				}
-			},
-			{
-				"name": "三只松鼠大礼包",
-				"icon": "/static/coupon/jd.png",
-				"bannerPic": "/static/coupon/sanzhisongshu.png",
-				"url":"https://u.jd.com/tFDejq",
-				"type": 0,
-				"tabId": 3,
-				"minapp": {
-					"appid": "wx91d27dbf599dff74",
-					"path": "pages/proxy/union/union"
-				}
+				"type": 1
 			}
 		],
 		"schema": {
@@ -54,11 +81,11 @@
 	},
 	"tab": { // 集合（表名）
 		"data": [ // 数据
-			{
-				"icon": "/static/all.png",
-				"text": "全部",
-				"tabId": 0
-			},
+			// {
+			// 	"icon": "/static/all.png",
+			// 	"text": "全部",
+			// 	"tabId": 0
+			// },
 			{
 				"icon": "/static/ele.png",
 				"text": "饿了么",
@@ -70,10 +97,15 @@
 				"tabId": 2
 			},
 			{
-				"icon": "/static/jd.png",
-				"text": "京东",
-				"tabId": 3
+				"icon": "/static/pdd_icon.png",
+				"text": "拼多多",
+				"tabId": 5
 			}
+			// {
+			// 	"icon": "/static/jd.png",
+			// 	"text": "京东",
+			// 	"tabId": 3
+			// }
 		],
 		"schema": {
 			"bsonType": "object",

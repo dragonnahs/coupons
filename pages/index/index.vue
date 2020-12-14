@@ -1,5 +1,6 @@
 <template>
 	<view class="container">
+		<redflower-showTips>s</redflower-showTips>
 		<v-tabs v-model="current" :tabs="tabs" @change="changeTab" class="tab"></v-tabs>
 		<view class="coupon" ref="coupon">
 			<view class="item" v-for="(v, i) in couponList" @click="toCoupon(i)" :key="i">
@@ -14,8 +15,11 @@
 					</view>
 					<view class="right">免费领取</view>
 				</view>
+				<view class="intro" v-if="v.intro">
+					{{v.intro}}
+				</view>
 				<view class="bottom">
-					<image :src="v.bannerPic" mode="widthFix" />
+					<image :src="v.bannerPic" mode='widthFix' />
 				</view>
 			</view>
 		</view>
@@ -86,13 +90,9 @@
 				uni.showLoading({
 					title: '获取优惠中'
 				});
-				if (index == 0) {
-					this.couponList = this.coupons
-				} else {
-					for (let i in this.coupons) {
-						if (this.coupons[i].tabId == this.tabs[index].tabId) {
-							this.couponList.push(this.coupons[i])
-						}
+				for (let i in this.coupons) {
+					if (this.coupons[i].tabId == this.tabs[index].tabId) {
+						this.couponList.push(this.coupons[i])
 					}
 				}
 				//#ifdef H5
@@ -105,15 +105,15 @@
 				}, 500)
 			},
 			toCoupon(i) {
-				wx.requestSubscribeMessage({
-					tmplIds: ['roQJZa0Ih9Mg_FL2ND_r0LI1MOTgO1tQW117aOz_Urc'],
-					success(res) {
-						console.log(res)
-					},
-					fail(err) {
-						console.log(err)
-					}
-				})
+				// wx.requestSubscribeMessage({
+				// 	tmplIds: ['roQJZa0Ih9Mg_FL2ND_r0LI1MOTgO1tQW117aOz_Urc'],
+				// 	success(res) {
+				// 		console.log(res)
+				// 	},
+				// 	fail(err) {
+				// 		console.log(err)
+				// 	}
+				// })
 				console.log(this.couponList[i])
 				//h5
 				//#ifdef H5
@@ -133,11 +133,16 @@
 				//#endif
 			},
 			getHome() {
-				console.log(getApp().globalData.data.home)
-				let data = getApp().globalData.data.home
-				this.tabs = data.tabs
-				this.coupons = data.coupons
-				this.changeTab(0)
+				console.log(222,getApp().globalData.api)
+				uni.request({
+					url: getApp().globalData.api.home + '/home',
+					success: (res) => {
+						console.log(res)
+						this.tabs = res.data.data.tabs
+						this.coupons = res.data.data.coupons
+						this.changeTab(0)
+					}
+				});
 
 			}
 		}
@@ -164,7 +169,6 @@
 		.coupon {
 			padding-top: 200rpx;
 			padding-bottom: 10rpx;
-
 			.item {
 				background-color: #ffffff;
 				margin: 30rpx;
@@ -172,14 +176,12 @@
 				padding: 0 30rpx 30rpx 30rpx;
 
 				.top {
-					height: 116rpx;
+					height: 90rpx;
 					display: flex;
 					align-items: center;
 					justify-content: space-between;
-
 					.left {
-						height: 116rpx;
-
+						height: 90rpx;
 						display: flex;
 						align-items: center;
 						justify-content: space-between;
@@ -229,15 +231,21 @@
 						text-align: center;
 					}
 				}
-
+				.intro{
+					font-size: 30rpx;
+					color: #333333;
+					line-height: 1.5;
+					
+				}
 				.bottom {
 					height: auto;
 					width: 100%;
-
+					margin-top: 10rpx;
 					image {
 						display: block;
 						width: 100%;
 						height: auto;
+						max-height: 250rpx;
 					}
 				}
 			}

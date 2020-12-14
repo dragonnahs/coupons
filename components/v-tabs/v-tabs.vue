@@ -200,8 +200,8 @@
 				if (target.tabId === 5) {
 					// pdd优惠券
 					wx.navigateToMiniProgram({
-						appId: target.appId,
-						path: target.path,
+						appId: 'wxe79b2252872fd7a4',
+						path: '/pages/index/index',
 						success(res) {
 							// 打开成功
 						}
